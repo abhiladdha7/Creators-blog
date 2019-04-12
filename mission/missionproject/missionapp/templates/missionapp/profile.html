@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>CREATORS- A Blog site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Your page description here" />
+  <meta name="author" content="" />
+
+
+  <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+  <script src="//cdn.jsdelivr.net/medium-editor/latest/js/medium-editor.min.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/medium-editor/latest/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+
+
+  {# Custom CSS#}
+  <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
+  <!-- css -->
+  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+  <link href="{% static 'css/bootstrap-responsive.css' %}" rel="stylesheet" />
+  <link href="{% static 'css/prettyPhoto.css' %}" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <!-- Theme skin -->
+  <link id="t-colors" href="{% static 'color/default.css' %}" rel="stylesheet" />
+
+  <!-- Fav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'ico/apple-touch-icon-144-precomposed.png' %}" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'ico/apple-touch-icon-114-precomposed.png' %}" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'ico/apple-touch-icon-72-precomposed.png' %}" />
+  <link rel="apple-touch-icon-precomposed" href="{% static 'ico/apple-touch-icon-57-precomposed.png' %}" />
+  <link rel="shortcut icon" href="{% static 'ico/favicon.png' %}" />
+
+  <!-- =======================================================
+    Theme Name: Remember
+    Theme URL: https://bootstrapmade.com/remember-free-multipurpose-bootstrap-template/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+
+  <style>
+
+  .dropdown {
+  position: relative;
+  display: inline-block;
+  }
+
+  .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.65);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  }
+
+  .dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  }
+
+  .dropdown-content a:hover {background-color: #ddd;}
+
+  .dropdown:hover .dropdown-content {display: block;}
+
+  .dropdown:hover .dropbtn {background-color: #3e8e4;}
+  </style>
+<style>
+
+  container.profile .content {
+      display: inline-block;
+  }
+
+  container.profile .content .profile.card {
+      border-radius: 0;
+      box-shadow: 0 0 4px rgba(40,44,63,0.08);
+      border: 1px solid #eaeaec;
+  }
+
+  .profile.card {
+      border-radius: 0;
+      box-shadow: 0 0 4px rgba(40,44,63,0.08);
+      border: 1px solid #eaeaec;
+  }
+   .profile-data {
+      padding-top: 55px;
+      padding-left: 10px;
+      padding-bottom: 20px;
+  }
+
+   .tab-content {
+      padding-left: 35px;
+  }
+
+  container.profile .content {
+    text-align: left;
+    display: block;
+}
+
+container.profile .content .profile.card .profile-data .tab-content {
+    padding-left: 35px;
+}
+
+container.profile .content {
+    text-align: left;
+    display: block;
+}
+
+container.profile .content .profile.card .profile-data .tab-content table tr td.title {
+    color: #9fa8ab;
+    min-width: 120px;
+}
+
+.mine{
+  padding-left:60px;
+}
+
+th, td {
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+
+  padding: 15px;
+text-align: left;
+}
+table {
+
+  border-collapse: collapse;
+
+  :30px;
+}
+</style>
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <!-- start header -->
+    <header>
+      <div class="top">
+        <div class="container">
+          <div class="row">
+            <div class="span6">
+              <ul class="topmenu">
+                <li><a href="#">Home</a> &#47;</li>
+                <li><a href="{% url 'termsandcondition' %}">Terms</a> &#47;</li>
+                <li><a href="{% url 'privacy_policy' %}">Privacy policy</a></li>
+              </ul>
+            </div>
+            <div class="span6">
+
+              <ul class="social-network">
+                <li><a href="https://www.facebook.com/" data-placement="bottom" title="Facebook"><i class="icon-circled icon-bglight icon-facebook"></i></a></li>
+                <li><a href="https://twitter.com/login?lang=en" data-placement="bottom" title="Twitter"><i class="icon-circled icon-bglight icon-twitter"></i></a></li>
+                <li><a href="https://in.linkedin.com/" data-placement="bottom" title="Linkedin"><i class="icon-circled icon-linkedin icon-bglight"></i></a></li>
+                <li><a href="https://in.pinterest.com/
+" data-placement="bottom" title="Pinterest"><i class="icon-circled icon-pinterest  icon-bglight"></i></a></li>
+                <li><a href="https://aboutme.google.com/u/0/" data-placement="bottom" title="Google +"><i class="icon-circled icon-google-plus icon-bglight"></i></a></li>
+              </ul>
+
+            </div>-
+          </div>
+        </div>
+      </div>
+      <div class="container">
+
+
+        <div class="row nomargin">
+          <div class="span4">
+            <div class="logo">
+              <h1><a href="index.html"><i class="icon-tint"></i> CREATORS</a></h1>
+            </div>
+          </div>
+          <div class="span8">
+            <div class="navbar navbar-static-top">
+              <div class="navigation">
+                <nav>
+                  <ul class="nav topnav">
+                    <li class="active">
+                      <a href="{% url 'index' %}">Home</a>
+                    </li>
+                    <li class="active">
+                      <a href="{% url 'about' %}">About Us</a>
+                      </li>
+
+                      {% if user.is_authenticated %}
+
+                      <li class="dropdown active" >
+
+
+                        <a href="#">Profile:{{user.username}}<i class="icon-angle-down"></i></a>
+                        <ul class="dropbtn" role="menu" aria-labelledby="">
+                          <div class="dropdown-content">
+                            <li><a href="{% url 'view_profile' %}">Your Profile</a></li>
+                            <li><a href="{% url 'user_posts' %}">Your Posts</a></li>
+                          </div>
+                        </ul>
+                      </li>
+
+                      <li class="active">
+                        <a href="{% url 'user_logout' %}">LogOut</a>
+                      </li>
+
+
+                    {% else %}
+                    <li class="active">
+                      <a href="{% url 'register' %}">SignUp</a>
+                      </li>
+                    <li class="active" >
+                      <a href="{% url 'user_login' %}">LogIn</a>
+
+                    </li>
+                    {% endif %}
+                  </ul>
+                </nav>
+              </div>
+              <!-- end navigation -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="content">
+      <div class="container">
+        <div class="row">
+
+          <div class="span8">
+<div class="content">
+  <div class="profile-card">
+    <div class="profile-data">
+      <section></section>
+      <div class="tabs"></div>
+      <div class="table-content">
+
+        <div class="page-content">
+          <div class="profile-picture">
+            <div class="image"></div>
+          </div>
+          <div class="" style="  width: 1020px;
+          height:460px;
+  padding: 15px;
+  border-style:inset;
+  border-width: 2px;
+  border-color: #7DF366;
+  background-color:#ccf2a;
+
+  margin: 0;">
+  <br>
+  <br>
+  <div class="span3">
+    <div class="team-box">
+      {% if user.userprofile.profile_pic %}
+      <a href="#" class="thumbnail"><img src="{{user.userprofile.profile_pic.url}}" alt="" /></a>
+
+      {% else %}
+      <a href="#" class="thumbnail"><img src="{% static 'img/avatar2.png' %}" alt="" /></a>
+
+        {% endif %}
+      <div class="roles aligncenter">
+        <p class="lead"><strong>{{user.first_name}}&nbsp;&nbsp;{{user.last_name}}</strong></p>
+
+
+      </div>
+    </div>
+  </div>
+  <div class="mine" >
+
+    <table>
+      <tbody>
+        <th><h4 style="text-decoration:underline">Primary Information</h4></th>
+        <tr>
+          <td class="title">UserName</td>
+
+          <td>{{user.username}}</td>
+        </tr>
+        <tr>
+          <td class="title">First Name</td>
+          <td>{{user.first_name}}</td>
+        </tr>
+        <tr>
+          <td class="title">Last Name</td>
+          <td>{{user.last_name}}</td>
+        </tr>
+        <tr>
+          <td class="title">Email</td>
+          <td>{{user.email}}</td>
+        </tr>
+        <tr>
+          <td class="title">Portfolio</td>
+
+          <td>{{user.userprofile.portfolio_site}}</td>
+        </tr>
+
+        <td>  <a class="btn btn-color margintop10" href="{% url 'edit_profile'  %}">Edit Profile</a></td>
+
+
+      </tbody>
+    </table>
+  </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+                </div>
+              </div>
+
+
+            <!-- author info -->
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="span4">
+            <div class="widget">
+              <div class="footer_logo">
+                <h3><a href="index.html"><i class="icon-tint"></i> CREATORS</a></h3>
+              </div>
+
+            </div>
+          </div>
+          <div class="span4">
+            <div class="widget">
+              <h5 class="widgetheading">Browse pages</h5>
+              <ul class="link-list">
+
+                                 <li><a href="{% url 'termsandcondition' %}">Terms and conditions</a></li>
+                                 <li><a href="{% url 'privacy_policy' %}">Privacy policy</a></li>
+
+              </ul>
+
+            </div>
+          </div>
+          <div class="span4">
+            <div class="widget">
+            <!--  <h5 class="widgetheading">From flickr</h5>
+              <div class="flickr_badge">
+                <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=34178660@N03"></script>
+              </div>-->
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="sub-footer">
+        <div class="container">
+          <div class="row">
+            <div class="span6">
+              <div class="copyright">
+               <p><span>&copy;CREATORS All right reserved</span></p>
+              </div>
+
+            </div>
+
+            <div class="span6">
+              <div class="credits">
+                <!--
+                  All the links in the footer should remain intact.
+                  You can delete the links only if you purchased the pro version.
+                  Licensing information: https://bootstrapmade.com/license/
+                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Remember
+                -->
+                Created by <a href="#">Abhishek & Summet in Django Framework</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <a href="#" class="scrollup"><i class="icon-angle-up icon-rounded icon-bglight icon-2x"></i></a>
+
+  <!-- javascript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/modernizr.custom.js"></script>
+  <script src="js/toucheffects.js"></script>
+  <script src="js/google-code-prettify/prettify.js"></script>
+  <script src="js/jquery.prettyPhoto.js"></script>
+  <script src="js/portfolio/jquery.quicksand.js"></script>
+  <script src="js/portfolio/setting.js"></script>
+  <script src="js/animate.js"></script>
+
+  <!-- Template Custom JavaScript File -->
+  <script src="js/custom.js"></script>
+  <script src="{% static "highlight.pack.js" %}"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+     <script  src="{% static 'js/vendor/jquery.js' %}"></script>
+     <script  src="{% static 'js/vedor/what-input.js' %}"></script>
+     <script  src="{% static 'js/foundation.min.js'%}"></script>
+     <script src="js/blog.js"></script>
+<script>var editor = new MediumEditor('.editable');</script>
+  </body>
+
+  </html>

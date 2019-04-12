@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+
+    .dropdown {
+    position: relative;
+    display: inline-block;
+    }
+
+    .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.65);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    }
+
+    .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    }
+
+    .dropdown-content a:hover {background-color: #ddd;}
+
+    .dropdown:hover .dropdown-content {display: block;}
+
+    .dropdown:hover .dropbtn {background-color: #3e8e4;}
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <ul class="nav navbar-nav">
+          <li><a class="navbar-brand" href="{% url 'index' %}">Django</a></li>
+          <li><a class="navbar-link" href="{% url 'admin:index' %}">ADMIN</a></li>
+          <li><a class="navbar-link" href="{% url 'register' %}">REGISTER</a></li>
+          <li><a class="navbar-link" href="{% url 'about' %}">ABOUT</li>
+
+          {% if user.is_authenticated %}
+          <li><a class="navbar-link" href="{% url 'user_logout' %}">LOGOUT</a></li>
+          {% else %}
+          <li><a class="navbar-link" href="{% url 'user_login' %}">LOGIN</a></li>
+          {% endif %}
+
+        </ul>
+      </div>
+    </nav>
+    {% block body_block %}
+    {% endblock %}
+  </body>
+</html>

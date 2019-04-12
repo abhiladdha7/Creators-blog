@@ -1,0 +1,10 @@
+{% extends 'final_app/base.html' %}
+{% block body_block %}
+
+<div class="">
+  {% for cat in categorys %}
+  <h2><a href="{% url 'post_by_category' pk=cat.pk %}">{{cat.cat_name}}</a></h2>
+  {% endfor %}
+</div>
+<h1>Category</h1>
+{% endblock %}
